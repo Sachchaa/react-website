@@ -8,8 +8,8 @@ export const homeObject = {
     description: 'Sign up for a booking',
     buttonLable: 'Get Started',
     imgStart: false,
-    //img: ,
-    alt: 'car',
+    img: require('../../images/svg-1.svg'),
+    alt: 'Car',
     dark: true,
     primary: true,
     darkText: false
