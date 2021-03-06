@@ -15,7 +15,7 @@ import {
     Image
 } from './InfoElements'
 
-const Info = ({ lightBg, imgStart, topLine, id, lightText, headLine, darkText, description, buttonLable, image,
+const Info = ({ lightBg, imgStart, topLine, id, lightText, headLine, lightTextDesc, description, buttonLable, image,
     alt }) => {
     return (
         <>
@@ -26,8 +26,8 @@ const Info = ({ lightBg, imgStart, topLine, id, lightText, headLine, darkText, d
                             <TextWrapper>
                                 <TopLine>{topLine}</TopLine>
                                 <Heading lightText={lightText}>{headLine}</Heading>
-                                <Subtitle lightText={lightText}>{description}</Subtitle>
-                                <ButtonWrap>
+                                <Subtitle lightText={lightTextDesc}>{description}</Subtitle>
+                                <ButtonWrap lightBg={lightBg}>
                                     <Button to='home'>{buttonLable}</Button>
                                 </ButtonWrap>
                             </TextWrapper>
