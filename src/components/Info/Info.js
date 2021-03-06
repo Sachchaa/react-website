@@ -15,17 +15,17 @@ import {
     Image
 } from './InfoElements'
 
-const Info = ({ lighBg, imgStart, topLine, id, lightText, heading, darkText, description, buttonLable, img,
+const Info = ({ lightBg, imgStart, topLine, id, lightText, headLine, darkText, description, buttonLable, image,
     alt }) => {
     return (
         <>
-            <InfoContainer lighBg={lighBg} id={id}>
+            <InfoContainer lightBg={lightBg} id={id}>
                 <InfoWrapper>
                     <InfoRow imgStart={imgStart}>
                         <Column1>
                             <TextWrapper>
                                 <TopLine>{topLine}</TopLine>
-                                <Heading lightText={lightText}>{heading}</Heading>
+                                <Heading lightText={lightText}>{headLine}</Heading>
                                 <Subtitle lightText={lightText}>{description}</Subtitle>
                                 <ButtonWrap>
                                     <Button to='home'>{buttonLable}</Button>
@@ -34,7 +34,7 @@ const Info = ({ lighBg, imgStart, topLine, id, lightText, heading, darkText, des
                         </Column1>
                         <Column2>
                             <ImageWrap>
-                                <Image src={img} alt={alt} />
+                                <Image src={image} alt={alt} />
                             </ImageWrap>
                         </Column2>
                     </InfoRow>
