@@ -1,5 +1,4 @@
 import ImageOne from '../../images/svg-1.svg'
-import ImageTwo from '../../images/svg-2.svg'
 import ImageThree from '../../images/svg-3.svg'
 
 export const homeObjectOne = {
@@ -19,25 +18,8 @@ export const homeObjectOne = {
     darkText: false,
 }
 
-export const homeObjectTwo = {
-    id: 'services',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
-    topLine: 'Services',
-    headLine: 'Need a Hot Air Balloon ride?',
-    description: 'Sign up for a booking',
-    buttonLable: 'Learn More..',
-    imgStart: true,
-    image: ImageTwo,
-    alt: 'Sv',
-    dark: false,
-    primary: false,
-    darkText: true,
-}
-
 export const homeObjectThree = {
-    id: 'about',
+    id: 'contact-us',
     lightBg: false,
     lightText: true,
     lightTextDesc: true,

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
+import { animateScroll as scroll } from 'react-scroll'
 import {
     Nav,
     NavbarContainer,
@@ -8,16 +9,32 @@ import {
     NavMenu,
     NavItem,
     NavLink,
-    NavButton,
-    NavButtonLink
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
+    const [scrollNav, setScrollNav] = useState(false)
+
+    const changeNav = () => {
+        if (window.scrollY >= 80) {
+            setScrollNav(true)
+        } else {
+            setScrollNav(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeNav)
+    }, [])
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
+
     return (
         <>
-            <Nav>
+            <Nav scrollNav={scrollNav}>
                 <NavbarContainer>
-                    <NavLogo to='/'>
+                    <NavLogo to='/' onClick={toggleHome}>
                         <h1>LOGO</h1>
                     </NavLogo>
                     <MobileIcons onClick={toggle}>
@@ -25,24 +42,15 @@ const Navbar = ({ toggle }) => {
                     </MobileIcons>
                     <NavMenu>
                         <NavItem>
-                            <NavLink to='about' >About</NavLink>
+                            <NavLink to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='services'>Services</NavLink>
+                            <NavLink to='services' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Services</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='contact-us'>Contact Us</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to='signup'>Sign Up</NavLink>
+                            <NavLink to='contact-us' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Contact Us</NavLink>
                         </NavItem>
                     </NavMenu>
-                    <NavButton>
-                        <NavButtonLink to='signin'>
-                            Sign In
-                        </NavButtonLink>
-                    </NavButton>
-
                 </NavbarContainer>
             </Nav>
 
